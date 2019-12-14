@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+	<title>Medicinal Chemi</title>
+	<link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+		html,body{margin:0; padding:0; height:100%}
+		header{		}
+		section{width: 80%; margin-left:10%; margin-right:10%; height: 80%;  float:left;}
+		footer{width: 100%; height: 15%;  background: white; clear:both;}
+		button{
+			position: relative;
+			left: 50;
+		}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<img id="logoimg" src="img/logo.jpg">
+		<img id="soon" src="img/soon.png" alt="">
+	</header>
+	<nav id="topMenu">
+		<ul>
+			<li><a class="menulink "href="#" >의약품 검색</a></li>
+			<li><a class="menulink "href="#" >복약 정보</a></li>
+			<li><a class="menulink "href="#" >성분 정보</a></li>
+			<li><a class="menulink "href="#" >상호 작용</a></li>
+			<li><a class="menulink "href="#" >의약 기사</a></li>
+		</ul>
+	</nav>
+	<section>
+		<div style="display; height:70px; background: #6699cc; font-size:50px; margin:50px; text-align:center; color:white;">회원 가입
+		</div>
+		<div style="display; height:200px; background:#E7E7E7; text-align:center; font-size:25px; margin:50px;"> <span style="color:#336699; font-size:40px;">
+		환영합니다.</span><br><br> Medicinal Chemi에 가입하시면 PC,스마트폰, 태블릿 모두에서 로그인할 수 있습니다. 
+		</div>
+		<form>
+		<div style="display; height:700px; background:#E7E7E7; font-size:25px; margin:50px; padding:25px;">
+		 <form action="join.jsp" method="post">
+		 아이디 <input type="text" size="15" value="" name="id"><br>
+		 비밀번호 <input type="password" size="15" value="" name="pass"><br>
+		 휴대전화<input type="text" list="num" size="3" name="phone">
+			<datalist id="num">
+			<option value="010">
+			<option value="011">
+			<option value="017">
+			</datalist>- <input type="text" size="8" value=""><br>
+         이메일 <input type="text" size="8" value=""> @ 
+			  <input type="text" list="mail" size="10">
+			  <datalist id="mail">
+				<option value="naver.com">
+				<option value="daum.net">
+				<option value="nate.com">
+				<option value="gmail.com">
+				<option value="hotmail.com">   
+			  </datalist><br>
+         sns수신여부
+			  <input type="radio" name="agree" value="1" checked>동의함
+              <input type="radio" name="agree" value="2">동의안함<br>
+         생년월일  
+			  <input type="text" size="3"> 년 <input type="text" size="3"> 월 <input type="text" size="3"> 일  
+              <input type="radio" name="day" value="1" checked>양력
+              <input type="radio" name="day" value="2">음력
+              <br>
+              <br>
+
+              <button type="submit" class="w3-button w3-blue w3-round-large">회원가입</button>
+              <button type="button" class="w3-button w3-blue w3-round-large" onclick="location='MedicinalChemi.html'">취소</button>
+		</form>
+		<div>
+	</section>
+	<footer>footer</footer>
+</body>
+	
+</html>

@@ -1,0 +1,52 @@
+#header {
+	max-width: 100%;
+	height: 130px;
+	text-align: center;
+	overflow: hidden;
+	align-content: center;
+	background-repeat: no-repeat;
+
+}
+#soon{
+	position: absolute;
+	background-repeat: no-repeat;
+	top: 0;
+	left:0;
+
+}
+#logoimg{
+	margin-top: 10px;
+	background-repeat: no-repeat;
+}
+
+#topMenu{
+	background-color: #0090ff;
+	height: 50px;
+	width:100%;
+}
+#topMenu ul{
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+#topMenu ul li{
+	list-style: none;
+	color:white;
+	background-color:#0090ff;
+	float: left;
+	line-height: 50px;
+	vertical-align: middle;
+	text-align: center;
+}
+#topMenu .menulink{
+	text-decoration: none;
+	color:white;
+	display: block;
+	width: 150px;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: "KoPubWorld돋움체 Bold" ,"KoPubWorld돋움체 Light";
+}
+#topMenu .menulink:hover{
+	background:#9cd4ff;
+}
