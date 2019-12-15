@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+	<title>Medicinal Chemi</title>
+	<link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+		html,body{margin:0; padding:0; height:100%}
+		header{		}
+		aside{width: 20%; height: 80%; margin-left:10%; background: yellow; float:left; }
+		section{width: 40%; height: 80%; background: red; float:left;}
+		article{width: 20%; height: 80%; margin-right:10%; background: blue; float:left;}
+		footer{width: 100%; height: 15%;  background: white; clear:both;}
+		div{ 
+			border: 5px solid #6699cc;
+			background: white;
+			margin: 15%;
+			padding: 5%;
+		}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<img id="logoimg" src="img/logo.jpg">
+		<img id="soon" src="img/soon.png" alt="">
+	</header>
+	<nav id="topMenu">
+		<ul>
+			<li><a class="menulink "href="#" >의약품 검색</a></li>
+			<li><a class="menulink "href="#" >복약 정보</a></li>
+			<li><a class="menulink "href="#" >성분 정보</a></li>
+			<li><a class="menulink "href="#" >상호 작용</a></li>
+			<li><a class="menulink "href="#" >의약 기사</a></li>
+		</ul>
+	</nav>
+	<aside>
+	<div>
+		<form class = "w3-container">
+		<label class="w3-text-blue">아이디</label>
+		<input class="w3-input w3-border" type="text" style="width:100%">
+		<label class="w3-text-blue">비밀번호</label>
+		<input type="password" class="w3-input w3-border" style="width:100%"><br>
+		<center>
+		<button class="w3-button w3-blue w3-round-large">로그인</button>
+		<button class="w3-button w3-round-large w3-blue" onclick="location.href='C:/Users/MITE1504/Desktop/WebProject/join.html';">회원가입</button>
+		</center>
+	</div>
+	</aside>
+	<section>section</section>
+	<article>
+		  <div class="w3-panel w3-border w3-round-xxlarge w3-border-green" style="width: 90%; margin:20px;">
+              <center> <h3 class="w3-green" style="text-shadow:1px 1px 0 #444; ">최신의약기사</h3></center>
+              <ul class="w3-ul w3-left w3-hoverable " style="float: left">
+                  <li style="float: left  width: 100%;"><a href="https://www.yna.co.kr/view/AKR20191203120200030?input=1195m" style="text-decoration: none"><img src= "img/article1.jpg">소비자원 "의약품 점자 표시 비율 낮고 가독성도 떨어져"</a></li>
+                  <li style="width: 100%;"><a href="http://www.kmedinfo.co.kr/news/articleView.html?idxno=58535" style="text-decoration: none"><img src="img/article2.jpg">의약품 사후평가, 찬반 팽팽한 대립</a></li>                   
+                  <li style="width: 100%;"><a href="http://www.yakup.com/news/index.html?mode=view&cat=11&nid=238166" style="text-decoration: none"><img src="img/article3.jpg" >불법 의약품 판매 사이트 차단, '60일→7일' 단축 검토</a></li>
+                  <li style="width: 100%;"><a href="http://medipana.com/news/news_viewer.asp?NewsNum=249701&MainKind=A&NewsKind=5&vCount=12&vKind=1" style="text-decoration: none"><img src="img/article4.jpg"a>美·中무역갈등·日경제전쟁..의약품·의료기기 중남미 돌파 답?</a></li>     
+              </ul>
+           </div> 
+	</article>
+	<footer>footer</footer>
+</body>
+	
+</html>

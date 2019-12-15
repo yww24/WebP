@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medicinal Chemi</title>
+	<link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html,body{
+      margin:0;
+      padding:0;
+      height:100%
+    }
+    aside{
+      width: 0%;
+      height: 80%;
+      margin-left:10%;
+      float:left; 
+    }
+    section{
+      width: 60%;
+      height: 80%;
+      float:left;
+    }
+    article{
+      width: 20%;
+      height: 80%;
+      margin-right:5px;
+      float:left;
+    }
+    footer{
+      width: 100%;
+      height: 15%;
+      background: white;
+      clear:both;
+    }
+    #div{ 
+     border: 5px solid #6699cc;
+     background: white;
+     margin: 15%;
+     padding: 5%;
+   }
+   #divtemp{
+    background : white;
+    border : 1px;
+    width: 40%; margin:10px; float:left;
+    height: 90%;
+  }
+</style>
+</head>
+<body>
+	<header id="header">
+	 <a href="MainPage.html"><img id="logoimg" src="img/logo.jpg"></a>
+		<img id="soon" src="img/soon.png" alt="">
+	</header>
+	<nav id="topMenu">
+   <ul>
+    <li><a class="menulink "href="search.html" >의약품 검색</a></li>
+    <li><a class="menulink "href="infomation.html" >복약 정보</a></li>
+    <li><a class="menulink "href="#" >성분 정보</a></li>
+    <li><a class="menulink "href="#" >상호 작용</a></li>
+    <li><a class="menulink "href="#" >의약 기사</a></li>
+  </ul>
+</nav>
+<aside>
+
+</aside>
+<section>
+  <h3 class="w3-green" style="margin-top:30px;">제품별 복약정보</h3>
+  <div class="w3-panel w3-leftbar w3-border-green w3-pale-green", style="color: white; margin-top:20px;">
+    복약안내문을 출력하고자 하는 제품을 검색하여 선택목록으로 이동시킨 후 아래의 복약안내문 출력 버튼을 눌러 선택한 제품들을 한 번에 출력할 수 있습니다.
+  </div>
+  <div class="w3-panel w3-border w3-round-xxlarge w3-border-green"  style="width: 1050px; margin-top:50px;">
+    <h3 class="w3-green" style="text-shadow:1px 1px 0 #444; width: 150px; border-radius:10px; text-align:center; margin-left:20px; margin-top:20px; ">제품검색</h3>
+    <div id="divtemp", style="width: 1000px; height: 300px;">
+      <div  class="w3-panel w3-border w3-round-xxlarge w3-border-green"  id = "divtemp" >
+        <div style="margin-left: 0px;">
+          <form>
+            <h5 class="w3-green", style="margin-right: 50px; width: 150px; border-radius:10px; text-align:center; ">제품명/성분명</h5> 
+            <input type="text", placeholder="검색하세요", style="width: 320px; margin-right: 0px; text-align:center; border-radius:20px; color:gray;">
+            <button type="button" style="margin-left:10px;"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+
+        <div style ="background-color: white; border-color: black; height: 30px;">
+          <textarea cols="30" rows="7" style="margin-top:20px; border-radius:20px;"></textarea>
+        </div>
+        </div> 
+        <img src="img/arrow.png" style="float: left; margin-top: 80px; margin-left: 40px;">
+        <div  class="w3-panel w3-border w3-round-xxlarge w3-border-green" id = "divtemp" style="margin-left: 40px">
+          <div >
+            <form>
+              <h5 class="w3-green", style="margin-right: 50px; width: 150px; text-align:center; border-radius: 10px;">선택목록</h5> 
+            </form>
+          </div>
+          <div style ="background-color: white; border-color: black; height: 30px;">
+           <textarea cols="30" rows="9" style=" border-radius:20px;"></textarea>
+         </div>
+          </div>
+        </div>
+      </div>
+      <form><button type="button", style="margin-left: 400px;margin-right:10px">복약안내문 보기</button><button type="button" style="margin-left: 10px">복약안내문 출력</button></form>
+      <h3 class="w3-green" style="text-shadow:1px 1px 0 #444; width: 130px; margin-top: 20px;">복약안내문</h3>
+    </section>
+    <article style="margin-left:50px;">
+      <div  class="w3-panel w3-border w3-round-xxlarge w3-border-green" style="width: 90%; margin:20px;", id = "div">
+        <center> <h3 class="w3-green" style="text-shadow:1px 1px 0 #444; ">최신의약기사</h3></center>
+        <ul class="w3-ul w3-left w3-hoverable " style="float: left">
+          <li style="float: left  width: 100%;"><a href="https://www.yna.co.kr/view/AKR20191203120200030?input=1195m" style="text-decoration: none"><img src= "img/article1.jpg">소비자원 "의약품 점자 표시 비율 낮고 가독성도 떨어져"</a></li>
+          <li style="width: 100%;"><a href="http://www.kmedinfo.co.kr/news/articleView.html?idxno=58535" style="text-decoration: none"><img src="img/article2.jpg">의약품 사후평가, 찬반 팽팽한 대립</a></li>                   
+          <li style="width: 100%;"><a href="http://www.yakup.com/news/index.html?mode=view&cat=11&nid=238166" style="text-decoration: none"><img src="img/article3.jpg" >불법 의약품 판매 사이트 차단, '60일→7일' 단축 검토</a></li>
+          <li style="width: 100%;"><a href="http://medipana.com/news/news_viewer.asp?NewsNum=249701&MainKind=A&NewsKind=5&vCount=12&vKind=1" style="text-decoration: none"><img src="img/article4.jpg"a>美·中무역갈등·日경제전쟁..의약품·의료기기 중남미 돌파 답?</a></li>     
+        </ul>
+      </div> 
+    </article>
+  </body>
+
+  </html>

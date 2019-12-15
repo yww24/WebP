@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+		section{
+			margin-left:40px;
+		}
+		nav{
+			margin-top:15px;
+			padding-top:15px;
+			text-align:center;
+		}
+		fieldset{
+			color:gray;
+			width: 500px;
+			border: none;
+		}
+		select{
+			color: #0d7e9c;
+			width: 100px;
+			height: 15%;
+			border-radius:15px;
+		}
+		*{
+			margin:0; padding:0;
+			font-size:15px; 
+			line-height:1.3;
+		}
+		ul{list-style:none;}
+
+		.tabmenu{ 
+			max-width:600px; 
+			position:relative; 
+		}
+		.tabmenu ul li{
+			display:  inline-block;
+			width:33.33%; 
+			float:left;  
+			text-align:center; 
+			background :#e2e2e2;
+			line-height:40px;
+		}
+		.tabmenu label{
+			display:block;
+			width:100%; 
+			height:40px;
+			line-height:40px;
+		}
+		.tabmenu input{display:none;}
+		.tabCon{
+			display:none; 
+			text-align:left; 
+			padding: 20px;
+			position:absolute; 
+			left:0; top:40px; 
+			width: 500px;
+			box-sizing: border-box; 
+		}
+		.tabmenu input:checked ~ label{
+			background:#3177b0;
+			color:white;
+		}
+		.tabmenu input:checked ~ .tabCon{
+			display:block;
+		}
+		.momo{
+			display: none;
+			margin:10px;
+		}
+		.momo+.momo2{
+			border-radius:10px;
+			display: inline-block;
+			background-color:#f5f5f5;
+			border:1px solid #ccc;
+			font-size:13px !important;
+			width:50px;
+			text-align:center;
+		}
+		.momo:checked+.momo2{
+			background-image: none;
+			background-color:#3598dc;
+			color:#fff;
+		}
+		.coco{
+			display: none;
+			margin:10px;
+		}
+		.coco+.coco2{
+			border-radius:10px;
+			display: inline-block;
+			background-color:#f5f5f5;
+			border:3px solid #ccc;
+			font-size:13px !important;
+			width:50px;
+			text-align:center;
+		}
+		.coco:checked+.coco2{
+			background:none;
+			color:black;
+			background: white;
+			border:5px dotted;
+		}
+		.gege{
+			display: none;
+			margin:10px;
+		}
+		.gege+.gege2{
+			border-radius:10px;
+			display: inline-block;
+			background-color:#f5f5f5;
+			border:3px solid #ccc;
+			font-size:13px !important;
+			width:50px;
+			text-align:center;
+		}
+		.gege:checked+.gege2{
+			background:none;
+			border:3px solid #3598dc;
+		}
+		article{
+			width:100%;
+			height: 80%;
+			margin-left:550px;
+			
+		}
+		#result{
+			width:1000px;
+			text-align: center;
+			line-height: 1.5;
+			border-left:3px solid #369;
+		}
+		#result>th{
+			width: 147px;
+			height: 50px;
+			padding: 10px;
+			color: #153d73;
+		}
+		#result>td{
+			width: 349px;
+			padding: 10px;
+			vertical-align: top;
+			border-right: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+		}
+		#searchbar th,td{
+			padding:10px;
+		}
+	</style>
+	<script type="text/javascript">
+		var xmlhttp = new XMLHttpRequest();
+		var url = "data.json";
+
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				myfunc(xmlhttp.responseText);
+			}
+		};
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+
+		function myfunc(resp) {
+			var arr = JSON.parse(resp);
+			var out = "<table border='1'>";
+
+			for (var i = 0; i < arr.length; i++) {
+				out+=
+				"<tr>"+
+				"<td>"+ arr[i].firstname + "</td>" +
+				"<td>"+ arr[i].lastname + "</td>" +
+				"</tr>";
+			}
+			document.getElementById('demo').innerHTML = out;
+		}
+
+	</script>
+</head>
+<body>
+	<header id="header">
+		<a href="MainPage.html"><img id="logoimg" src="img/logo.jpg"></a>
+		<img id="soon" src="img/soon.png" alt="">
+	</header>
+	<nav id="topMenu">
+		<ul>
+			<li><a class="menulink "href="search.html" >의약품 검색</a></li>
+			<li><a class="menulink "href="infomation.html" >복약 정보</a></li>
+			<li><a class="menulink "href="#" >성분 정보</a></li>
+			<li><a class="menulink "href="#" >상호 작용</a></li>
+			<li><a class="menulink "href="#" >의약 기사</a></li>
+		</ul>
+	</nav>
+	<section>
+		<hr>
+		<div style="font-size:24px;  color:#034880 ">의약품 상세검색</div>
+		<div style="text-align:right; margin-left:0; background-color:#eaeaea; font-weight:normal; width: 95%; margin-right:20px; " >자료출처 : 식품의약품안전처</div>
+		<div style="margin-top:20px; "><img src="img/w.png" alt=""></div>
+		<div style="color:#3177b0; font-size:20px; margin-top:20px; margin-bottom:10px; display: inline-block;"> 약물 정보 입력
+			<img style="margin-left: 100px;" src="img/img.png" alt="">
+		</div>
+		<hr>
+		<div class="tabmenu">
+			<ul>
+				<li id="tab1" class="btnCon"> 
+					<input type="radio" checked name="tabmenu" id="tabmenu1">
+					<label for="tabmenu1">상세 검색</label>
+					<div class="tabCon" >
+						<fieldset>
+							<table id="searchbar" style="width: 500px;">
+								<tbody>
+									<tr><td>제품명</td><td><textarea name="" id="" cols="20" rows="1"></textarea></td></tr>
+									<tr><td>업체명</td><td> <textarea name="" id="" cols="20" rows="1"></textarea><br></td></tr>
+									<tr><td>성분명1</td><td><textarea name="" id="" cols="20" rows="1"></textarea></td></tr>
+									<tr><td>성분명2</td><td><textarea name="" id="" cols="20" rows="1"></textarea></td></tr>
+									<tr><td>성분명3</td><td><textarea name="" id="" cols="20" rows="1"></textarea></td></tr>
+									<tr><td>품목기준코드</td><td><textarea name="" id="" cols="20" rows="1"></textarea></td></tr>
+									<tr><td>표준코드</td><td><textarea name="" id="" cols="20" rows="1"></textarea></td></tr>
+									<tr>
+										<td>ATC코드</td>
+										<td><textarea name="" id="" cols="20" rows="1"></textarea></td>
+										<td><button style="color:white; background-color:gray; border-radius:10px; width: 50px; height: 30px;font-size:12px; font-weight:normal;">검색</button></td>
+										<td><button 
+											style="margin-right: 20px; color:white; background-color:#3177b0;border-radius:10px; font-size:12px; font-weight:normal; width: 50px; height: 30px;  ">취소</button></td>
+										</tr>
+										<tr>
+											<td>품목구분</td>
+											<td><select name="" id="">
+												<option value="">전체</option>
+												<option value="">의약품</option>
+												<option value="">의약외품</option>	
+												<option value="">생물의약품</option>
+												<option value="">한약(생약)제제등</option>
+												<option value="">마약품</option>
+											</select></td>
+										</tr>
+										<tr>
+											<td>전체/일반</td>
+											<td><select name="" id="">
+												<option value="">전체</option>
+												<option value="">전문</option>
+												<option value="">일반</option>
+											</select></td>
+										</tr>
+										<tr>
+											<td>완제/원료</td>
+											<td> <select name="" id="">
+												<option value="">전체</option>
+												<option value="">완제</option>
+												<option value="">원료</option>
+												<option value="">한약재</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>허가일</td>
+										<td><select name="" id="">
+											<option value="">전체</option>
+											<option value="">1개월</option>
+											<option value="">6개월</option>
+											<option value="">1년</option>
+											<option value="">3년</option>
+										</select>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</fieldset>
+				</div>
+			</li>
+			<li id="tab2" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu2">
+				<label for="tabmenu2">낱알 검색</label>
+				<div class="tabCon" >
+					<fieldset>
+						<table style="width:500px;">
+							<tr>
+								<td>모양 선택</td>
+								<td>
+									<table id="momo">
+										<tr>
+											<td><input class="momo" type="radio" id="radio1"name="radios"><label class="momo2" for="radio1">전체</label>
+											</td>
+											<td><input class="momo" type="radio" id="radio2"name="radios"><label class="momo2" for="radio2">원형</label>
+											</td>
+											<td><input class="momo" type="radio" id="radio3"name="radios"><label class="momo2" for="radio3">타원형</label>
+											</td>
+											<td><input class="momo" type="radio" id="radio4"name="radios"><label class="momo2" for="radio4">반원형</label>
+											</td>
+										</tr>
+										<tr>
+											<td><input class="momo" type="radio" id="radio5"name="radios"><label class="momo2" for="radio5">삼각형</label>
+											</td>
+											<td><input class="momo" type="radio" id="radio6"name="radios"><label class="momo2" for="radio6">사각형</label>
+											</td>
+											<td><input class="momo" type="radio" id="radio7"name="radios"><label class="momo2" for="radio7">마름모</label>
+											</td>
+											<td><input class="momo" type="radio" id="radio8"name="radios"><label class="momo2" for="radio8">정방형</label>
+											</td>
+										</tr>
+										<tr>
+											<td><input class="momo" type="radio" id="radio9"name="radios"><label class="momo2" for="radio9">오각형</label>
+											</td>
+											<td><input class="momo" type="radio" id="radio10"name="radios"><label class="momo2" for="radio10">육각형</label>
+											</td>
+											<td><input class="momo" type="radio" id="radio11"name="radios"><label class="momo2" for="radio11">팔각형</label>
+											</td>
+											<td><input class="momo" type="radio" id="radio12"name="radios"><label class="momo2" for="radio12">기타</label>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>색상선택</td>
+								<td>
+									<table id="coco" style="margin-top: 20px;">
+										<tr>
+											<td>
+												<input class="coco" type="radio" id="color1"name="color">
+												<label class="coco2" for="color1" style="border-color: white;">전체</label>
+											</td>
+											<td>
+												<input class="coco" type="radio" id="color2"name="color">
+												<label class="coco2" for="color2"style="border-color: white;"
+												>하양</label>
+											</td>
+											<td><input class="coco" type="radio" id="color3"name="color">
+												<label class="coco2" for="color3" value="yellow"
+												style="border-color: yellow;">노랑</label>
+											</td>
+											<td><input class="coco" type="radio" id="color4"name="color"><label class="coco2" for="color4"
+												style="border-color: orange;">주황</label>
+											</td>
+										</tr>
+										<tr>
+											<td><input class="coco" type="radio" id="color5"name="color"><label class="coco2" for="color5"
+												style="border-color: pink;">분홍</label>
+											</td>
+											<td><input class="coco" type="radio" id="color6"name="color"><label class="coco2" for="color6"style="border-color: red; ">빨강</label>
+											</td>
+											<td><input class="coco" type="radio" id="color7"name="color"><label class="coco2" for="color7"
+												style="border-color: brown;">갈색</label>
+											</td>
+											<td><input class="coco" type="radio" id="color8"name="color"><label class="coco2" for="color8"style="border-color: #b6ff6f;">연두</label>
+											</td>
+										</tr>
+										<tr>
+											<td><input class="coco" type="radio" id="color9"name="color"><label class="coco2" for="color9"style="border-color: green;">초록</label>
+											</td>
+											<td><input class="coco" type="radio" id="color10"name="color"><label class="coco2" for="color10"
+												style="border-color: #005566;">청록</label>
+											</td>
+											<td><input class="coco" type="radio" id="color11"name="color"><label class="coco2" for="color11"style="border-color: blue;">파랑</label>
+											</td>
+											<td><input class="coco" type="radio" id="color12"name="color"><label class="coco2" for="color12"
+												style="border-color: #000080;">남색</label>
+											</td>
+										</tr>
+										<tr>
+											<td><input class="coco" type="radio" id="color13"name="color"><label class="coco2" for="color13"
+												style="border-color:#660099;">자주</label>
+											</td>
+											<td><input class="coco" type="radio" id="color14"name="color"><label class="coco2" for="color14"
+												style="border-color: purple;">보라</label>
+											</td>
+											<td><input class="coco" type="radio" id="color15"name="color"><label class="coco2" for="color15"
+												style="border-color: gray;">회색</label>
+											</td>
+											<td><input class="coco" type="radio" id="color16"name="color"><label class="coco2" for="color16"style="border-color: black;">검정</label>
+											</td>
+										</tr>
+										<tr>
+											<td><input class="coco" type="radio" id="color17"name="color"><label class="coco2" for="color17"
+												style="border-color:#00ff0000;">투명</label>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr >
+								<td>제형선택</td>
+								<td>
+									<table style="margin-top: 20px;">
+										<tr>
+											<td>
+												<input class="gege" type="radio" id="
+												texture1"name="texture"><label class="gege2" for="texture1"
+												>전체</label>
+											</td>
+											<td>
+												<input class="gege" type="radio" id="
+												texture2"name="texture"><label class="gege2" for="
+												texture2"
+												style="background:url(img/g1.png) no-repeat 0 0;"></label>
+											</td>
+											<td>
+												<input class="gege" type="radio" id="
+												texture3"name="texture"><label class="gege2" for="
+												texture3"
+												style="background:url(img/g2.png) no-repeat 0 0;"></label>
+											</td>
+											<td>
+												<input class="gege" type="radio" id="
+												texture4"name="texture"><label class="gege2" for="
+												texture4"
+												style="background:url(img/g3.png) no-repeat 0 0;"></label>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input class="gege" type="radio" id="
+												texture5"name="texture"><label class="gege2" for="
+												texture5"
+												>기타</label>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>분할선</td>
+								<td>
+									<table style="margin-top:20px">
+										<tr>
+											<td>
+												<input class="gege" type="radio" id="
+												line1"name="line"><label class="gege2" for="
+												line1"
+												>전체</label>
+											</td>
+											<td>
+												<input class="gege" type="radio" id="
+												line2"name="line"><label class="gege2" for="
+												line2 " style="background:url(img/plus.png) no-repeat 0 0;" 
+												></label>
+											</td>
+											<td>
+												<input class="gege" type="radio" id="
+												line3"name="line"><label class="gege2" for="
+												line3" style="background:url(img/mi.png) no-repeat 0 0;" 
+												></label>
+											</td>
+											<td>
+												<input class="gege" type="radio" id="
+												line4"name="line"><label class="gege2" for="
+												line4"
+												>기타</label>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>장축</td>
+								<td> <textarea cols="20" rows="1"></textarea></td>
+							</tr>
+							<tr>
+								<td>단축</td>
+								<td> <textarea cols="20" rows="1"></textarea></td>
+							</tr>
+						</table>
+						<div style="margin-left:20px; margin-top: 30px;">
+							<button style="border:none;"><img src="img/s1.png" alt=""></button>
+							<button style="border:none;"><img src="img/s2.png" alt=""></button>
+						</div>
+					</fieldset>
+				</div>
+			</li>    
+		</ul>
+	</div>
+</section>
+<article>	
+	<fieldset>
+		<table id="result" style="font-weight:normal;"  >
+			<thead"><tr><th>순번</th> <th>제품명</th> <th>업체명</th> <th>품목기준코드</th> <th>허가번호</th> <th>허가일</th> <th>품목구분</th><th>취소/취하</th><th>주성분</th> <th>취소/취하일자</th><th>주 성분</th><th>첨가제</th></tr></thead>
+			<tbody>
+				<tr><td>1</td> <td>#4500제이라스틱</td> <td>(주)곰스포츠</td><td>200511454</td><td>4</td><td>2005-01-27</td><td>의약외품</td><td></td><td></td><td></td><td>합성고무,원단,산화티탄,천연고무,산화아연,송지부틸화히...</td><td>반창고(33800)</td></tr>
+				<tr><td>2</td><td>(주)그린산업가스 의료용질소</td><td>(주)그린산업가스</td><td>200713159</td><td>2</td><td>2007-12-10</td><td>의약품</td><td>폐업</td><td>2017-07-03</td><td>질소</td><td></td><td></td></tr>
+				<tr><td>3</td><td>(주)그린산업가스 의료용산소</td><td>(주)그린산업가스</td><td>200710866</td><td>1</td><td>2007-09-28</td><td>의약품</td><td>폐업</td><td>2017-07-03</td><td>산소</td><td></td><td></td></tr>
+				<tr><td>4</td><td>(주)미성종합가스</td><td>199806988</td><td>1</td><td>1998-07-13</td><td>의약품</td><td>정상</td><td></td><td>산소</td><td></td><td></td></tr>
+				<tr><td>5</td><td>(주)창신 의료용 산소</td><td>(주)창신</td><td>200105441</td><td>1</td><td>2001-09-27</td><td>의약품</td><td>정상</td><td></td><td>산소</td><td></td><td></td></tr>
+				<tr><td>6</td><td>(트리플라이프)-그나랜면생리대</td><td>(주)트리플라이프</td><td>200708707</td><td>19</td><td>2007-07-27</td><td>의약외품</td><td>폐업</td><td>2019-05-24</td><td></td><td>면기모,면60수,면직물</td><td>생리대(31100)</td></tr>
+				<tr><td>7</td><td>0.45%엔에이시엘.케이20주</td><td>제이더블유생명과학(주)</td><td>200710604</td><td>22</td><td>2007-09-18</td><td>의약품</td><td>정상</td><td></td><td>염화칼륨,염화나트륨</td><td>염산,주사용수</td><td></td></tr>
+				<tr><td>8</td><td>0.9%엔에이시엘.케이40주</td><td>제이더블유생명과학(주)</td><td>200710605</td><td>29</td><td>2007-09-18</td><td>의약품</td><td>정상</td><td></td><td>염화칼륨,염화나트륨</td><td>염산,주사용수</td><td></td></tr>
+				<tr><td>9</td><td>1)딥퓨러티액(에탄올)2)뉴클린앤후레쉬손소독제(에탄올)3)24.7핸드세니타이저겔(에탄올)4)카리오페오리지널핸드세니타이저겔(에탄올)5)카리오페핸드크린겔(에탄올)6)팜앤닥핸드세니타이저겔(에탄올)7)에코리더핸드세니타이저겔(에탄올)8)아쿠아핸드세이프겔(에탄올)</td><td>유씨엘(주)</td><td>200804293</td><td>299</td><td>2008-04-18</td><td>의약외품</td><td>폐업</td><td>2018-12-10</td><td>에탄올</td><td>프로필렌글라이콜,트리에탄올아민,녹차추출물,이소프로필미리..</td><td>외용소독제(46000)</td></tr>
+				<tr><td>10</td><td>1)스킨메딕스소마씨(낙화생유)2)씨앤피아토솔루션마일드포밍클렌저(낙화생유)</td><td>(주)씨아이티</td><td>201310174</td><td>5006</td><td>2013-11-19</td><td>의약외품</td><td>취소</td><td>2017-05-30</td><td>낙화생유</td><td>사포나리아엑스,경화레시틴,N-라우로일-L-글루탐산나트륨...</td><td>욕용제(외용제에 한함)(41500)</td></tr>
+			</tbody>
+		</table>
+	</fieldset>
+</article>
+</body>
+</html>
